@@ -162,6 +162,58 @@
                 All repositories
               </a>
             </div>
+
+            <div class="project-block">
+              <h3 class="project-title">Clamp-to-cloud 100A energy monitor</h3>
+              <p class="project-body">
+                Phase 0 planning for a non-invasive 100&nbsp;A “clamp-to-cloud”
+                monitoring node: a split-core CT on the mains incomer feeding an
+                ESP32 ADC front-end, publishing live telemetry into a
+                containerised backend (MQTT, time-series store, FastAPI, web
+                dashboard).
+              </p>
+              <p class="project-meta">
+                <span>100&nbsp;A split-core CT (SCT-013-000 class)</span>
+                <span
+                  >22&nbsp;&Omega; burden + 1.65&nbsp;V bias for ESP32 ADC</span
+                >
+                <span>MQTT &rarr; time-series DB &rarr; FastAPI UI</span>
+              </p>
+              <ul class="project-list">
+                <li>
+                  Single 100&nbsp;A incomer profile:
+                  100&nbsp;A&nbsp;:&nbsp;50&nbsp;mA CT, sized burden resistor
+                  (≈22&nbsp;&Omega;) and mid-rail bias within 0–3.3&nbsp;V ADC
+                  range.
+                </li>
+                <li>
+                  Planned firmware: ESP32 samples mains current, computes or
+                  aggregates RMS, and publishes JSON over MQTT (Wi-Fi) to a
+                  broker.
+                </li>
+                <li>
+                  Planned backend: MQTT broker, time-series database, FastAPI
+                  worker for processing, and a lightweight dashboard using
+                  WebSockets + Chart.js for live power and daily kWh views.
+                </li>
+                <li>
+                  Security profile: baseline MQTT over TLS, with an optional
+                  hardened mode using MQTT over QUIC and WireGuard for
+                  adversarial or compliance-heavy deployments.
+                </li>
+              </ul>
+              <!-- Future: link to dedicated repo / docs when created -->
+              <!-- <a class="project-link" href="https://github.com/..." target="_blank" rel="noreferrer">
+                   Planning & design docs
+                 </a> -->
+              <button
+                type="button"
+                class="project-link project-link--button"
+                data-overlay-target="#clamp-overlay"
+              >
+                View detailed Phase 0 plan
+              </button>
+            </div>
           </article>
 
           <article class="card" id="fit">
@@ -235,6 +287,175 @@
           </p>
         </footer>
       </main>
+    </div>
+    <!-- Clamp-to-cloud detailed overlay -->
+    <div class="overlay" id="clamp-overlay" aria-hidden="true">
+      <div class="overlay-backdrop" data-overlay-close></div>
+      <div
+        class="overlay-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="clamp-overlay-title"
+      >
+        <button
+          type="button"
+          class="overlay-close"
+          aria-label="Close detailed plan"
+          data-overlay-close
+        >
+          ×
+        </button>
+        <h2 class="overlay-title" id="clamp-overlay-title">
+          Clamp-to-cloud 100A energy monitor &mdash; Phase 0 planning
+        </h2>
+        <p class="overlay-tagline">
+          Non-invasive 100&nbsp;A mains incomer monitoring with an ESP32 edge
+          node and a containerised backend (MQTT &rarr; time-series DB &rarr;
+          FastAPI UI).
+        </p>
+
+        <div class="overlay-section">
+          <h3>System overview</h3>
+          <p>
+            The goal is a single 100&nbsp;A incomer clamp that behaves like a
+            proper IoT node: non-invasive CT on the mains tails, minimal logic
+            on the ESP32, and all the “brains” (storage, processing,
+            visualisation) on a remote Debian/VPS stack.
+          </p>
+          <pre class="overlay-diagram"><code>[100 A mains incomer]
+   ↓ (non-invasive)
+[Split-core CT (100 A : 50 mA)]
+   ↓
+[Analog front-end]
+   - 22 Ω burden resistor
+   - Mid-rail bias at ~1.65 V
+   - Within 0–3.3 V ESP32 ADC range
+   ↓
+[ESP32 node]
+   - Samples ADC
+   - Computes RMS or aggregates samples
+   - Publishes JSON over MQTT (Wi-Fi)
+   ↓
+[Backend (Debian/VPS + Docker)]
+   - MQTT broker
+   - Time-series DB (e.g. InfluxDB)
+   - FastAPI worker + WebSockets
+   - Dashboard (Chart.js)</code></pre>
+        </div>
+
+        <div class="overlay-section">
+          <h3>100&nbsp;A CT hardware spec</h3>
+          <ul>
+            <li>
+              <strong>CT sensor:</strong> 100&nbsp;A split-core CT,
+              SCT-013-000-class (100&nbsp;A : 50&nbsp;mA).
+            </li>
+            <li>
+              <strong>Ratio:</strong> 100&nbsp;A primary &rarr; 50&nbsp;mA
+              secondary (2000:1).
+            </li>
+            <li>
+              <strong>Burden resistor:</strong> target ≈1.1&nbsp;V RMS at
+              100&nbsp;A across the CT, so
+              <code>R ≈ 1.1 V / 0.05 A ≈ 22 Ω</code>.
+            </li>
+            <li>
+              <strong>Burden power:</strong> at 50&nbsp;mA,
+              <code>P = I²R ≈ 0.055 W</code>, so a 0.25&nbsp;W metal film
+              resistor has plenty of headroom.
+            </li>
+            <li>
+              <strong>Bias network:</strong> 2&nbsp;×&nbsp;10&nbsp;kΩ forming a
+              divider from 3.3&nbsp;V to GND, midpoint at ~1.65&nbsp;V,
+              decoupled with 100&nbsp;nF&ndash;1&nbsp;µF to ground.
+            </li>
+            <li>
+              The CT/burden voltage is referenced to this mid-rail so the AC
+              waveform rides cleanly between 0&nbsp;V and 3.3&nbsp;V without
+              clipping.
+            </li>
+            <li>
+              <strong>MCU:</strong> ESP32 DevKit-style board (Wi-Fi, onboard
+              USB-serial) using one ADC channel for the CT input, with spare
+              GPIOs for future extra clamps / status LEDs.
+            </li>
+            <li>
+              <strong>Power:</strong> development via USB 5&nbsp;V; production
+              via a small DIN-rail or panel PSU feeding the ESP32 inside an
+              enclosure.
+            </li>
+          </ul>
+        </div>
+
+        <div class="overlay-section">
+          <h3>Planned firmware behaviour</h3>
+          <ul>
+            <li>
+              On boot, load a sensor profile (100&nbsp;A CT, 22&nbsp;Ω burden,
+              230&nbsp;V mains) from config.
+            </li>
+            <li>Bring up Wi-Fi and connect to the MQTT broker.</li>
+            <li>
+              Sample the ADC over one or more mains cycles, either computing RMS
+              current on the ESP32 or sending aggregated sample stats upstream.
+            </li>
+            <li>
+              Build a JSON payload with timestamp, node ID, current, power, and
+              any health flags, and publish to a topic like
+              <code>clamps/main_incomer</code> using QoS&nbsp;1.
+            </li>
+            <li>
+              Implement basic resilience: small local buffer for short outages,
+              reconnect with backoff on Wi-Fi/MQTT failure.
+            </li>
+          </ul>
+        </div>
+
+        <div class="overlay-section">
+          <h3>Planned backend behaviour</h3>
+          <ul>
+            <li>
+              MQTT broker receives telemetry and enforces topic-level ACLs
+              (<code>clamps/&lt;site&gt;/&lt;circuit&gt;</code>).
+            </li>
+            <li>
+              A FastAPI-based worker subscribes to clamp topics, validates
+              payloads, performs any remaining RMS / power calculations, and
+              writes points to a time-series database.
+            </li>
+            <li>
+              HTTP endpoints like <code>/api/history</code> and
+              <code>/api/stats</code> serve historical data and daily/weekly
+              summaries.
+            </li>
+            <li>
+              A lightweight dashboard (served by FastAPI) uses WebSockets for
+              live-updating charts (Chart.js) and an event log (spikes, drops,
+              gaps).
+            </li>
+          </ul>
+        </div>
+
+        <div class="overlay-section">
+          <h3>Security profile</h3>
+          <ul>
+            <li>
+              <strong>Baseline:</strong> MQTT over TLS for this personal /
+              portfolio deployment (energy-only, read-only).
+            </li>
+            <li>
+              <strong>Optional hardened mode:</strong> MQTT over QUIC
+              (TLS&nbsp;1.3) plus WireGuard as an overlay VPN so broker ports
+              are only reachable inside a mesh of authenticated peers.
+            </li>
+            <li>
+              The design keeps the default deployment lean, but lets the same
+              node and backend be dropped into more adversarial or
+              compliance-heavy networks without redesigning the architecture.
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <script src="assets/js/main.js"></script>
