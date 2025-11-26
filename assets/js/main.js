@@ -8,6 +8,12 @@
   const navLinks = document.querySelectorAll('.site-nav a[href^="#"]');
   navLinks.forEach((link) => {
     link.addEventListener("click", (evt) => {
+      // If this nav item is also an overlay trigger, let the overlay logic handle it
+      if (link.hasAttribute("data-overlay-target")) {
+        evt.preventDefault();
+        return;
+      }
+
       const href = link.getAttribute("href");
       if (!href || href.charAt(0) !== "#") return;
       const target = document.querySelector(href);

@@ -15,7 +15,7 @@
       <header class="site-header">
         <div class="site-logo">electrician.onl</div>
         <nav class="site-nav">
-          <a href="#profile">Profile</a>
+          <a href="#profile" data-overlay-target="#profile-overlay">Profile</a>
           <a href="#strengths">Strengths</a>
           <a href="#projects">Projects</a>
           <a href="#fit">Role fit</a>
@@ -63,8 +63,8 @@
             </p>
             <ul class="card-list">
               <li>
-                Domestic &amp; light commercial electrical work, EICRs, board
-                changes.
+                Domestic &amp; Commercial & Industrial - electrical works,
+                EICRs, board changes, diagnosis, repairs & compliance.
               </li>
               <li>Run a production Odoo ERP stack for my own business.</li>
               <li>
@@ -119,6 +119,13 @@
               >
                 View on GitHub
               </a>
+              <button
+                type="button"
+                class="project-link project-link--button"
+                data-overlay-target="#sml-overlay"
+              >
+                View secure-media-lab deep dive
+              </button>
             </div>
 
             <div class="project-block">
@@ -141,6 +148,13 @@
               >
                 View on GitHub
               </a>
+              <button
+                type="button"
+                class="project-link project-link--button"
+                data-overlay-target="#erp-overlay"
+              >
+                View ERP stack deep dive
+              </button>
             </div>
 
             <div class="project-block">
@@ -186,6 +200,13 @@
               >
                 View on GitHub
               </a>
+              <button
+                type="button"
+                class="project-link project-link--button"
+                data-overlay-target="#usb-overlay"
+              >
+                View verification engine deep dive
+              </button>
             </div>
 
             <div class="project-block">
@@ -338,6 +359,337 @@
         </footer>
       </main>
     </div>
+    <!-- Profile / background deep-dive overlay -->
+    <div class="overlay" id="profile-overlay" aria-hidden="true">
+      <div class="overlay-backdrop" data-overlay-close></div>
+      <div
+        class="overlay-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="profile-overlay-title"
+      >
+        <button
+          type="button"
+          class="overlay-close"
+          aria-label="Close profile details"
+          data-overlay-close
+        >
+          ×
+        </button>
+        <h2 class="overlay-title" id="profile-overlay-title">
+          Background &amp; working style
+        </h2>
+        <p class="overlay-tagline">
+          Time-served electrician running real production stacks, moving toward
+          DevOps / infrastructure and OT/ICS support roles.
+        </p>
+
+        <div class="overlay-section">
+          <h3>From electrical to infrastructure</h3>
+          <ul>
+            <li>
+              Domestic &amp; light commercial electrician: board changes, EICRs,
+              fault finding, compliance with BS 7671 and real-world constraints
+              (tenants, downtime, budgets).
+            </li>
+            <li>
+              Built and run a production Odoo ERP stack for my own business,
+              including web front-end, CRM, invoicing, and backups.
+            </li>
+            <li>
+              Maintain a secure home lab and remote stack: VPN-only access,
+              hardened firewalls, and automated backup/sync scripts.
+            </li>
+          </ul>
+        </div>
+
+        <div class="overlay-section">
+          <h3>How I approach systems</h3>
+          <ul>
+            <li>
+              Treat infrastructure like a live installation: planned changes,
+              rollback paths, backups tested before I trust them.
+            </li>
+            <li>
+              Prefer simple, observable designs: logs, structured reports, and
+              documentation that a future-me or another engineer can follow.
+            </li>
+            <li>
+              Security-aware by default: WireGuard, minimal exposed services,
+              and “assume the internet is hostile” as a baseline.
+            </li>
+          </ul>
+        </div>
+
+        <div class="overlay-section">
+          <h3>Roles I’m targeting</h3>
+          <ul>
+            <li>
+              Junior DevOps / Infrastructure engineer working with Linux,
+              Docker, and CI/CD.
+            </li>
+            <li>
+              Platform / SRE-style roles focused on reliability and operability.
+            </li>
+            <li>
+              OT / ICS support roles where electrical and infrastructure skills
+              meet (SCADA, PLC/field wiring, secure remote access).
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- secure-media-lab deep-dive overlay -->
+    <div class="overlay" id="sml-overlay" aria-hidden="true">
+      <div class="overlay-backdrop" data-overlay-close></div>
+      <div
+        class="overlay-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="sml-overlay-title"
+      >
+        <button
+          type="button"
+          class="overlay-close"
+          aria-label="Close secure-media-lab deep dive"
+          data-overlay-close
+        >
+          ×
+        </button>
+        <h2 class="overlay-title" id="sml-overlay-title">
+          secure-media-lab &mdash; deep dive
+        </h2>
+        <p class="overlay-tagline">
+          A VPN-first home lab and remote stack built on Debian/WSL2, Docker,
+          and automation, designed to keep real media and services safe.
+        </p>
+
+        <div class="overlay-section">
+          <h3>Problem &amp; goals</h3>
+          <ul>
+            <li>
+              I wanted a lab that mirrored “real” infrastructure: remote
+              services, storage, and automation, but with a strong security
+              bias.
+            </li>
+            <li>
+              Requirements: VPN-only ingress, reproducible with code, encrypted
+              backups, and minimal manual babysitting.
+            </li>
+          </ul>
+        </div>
+
+        <div class="overlay-section">
+          <h3>Core architecture</h3>
+          <ul>
+            <li>
+              Base OS: Debian and earlier WSL2 environments, hosting Docker
+              stacks for media services and supporting components.
+            </li>
+            <li>
+              Networking: WireGuard for all remote access, building a private
+              10.0.0.0/24-style network between VPS and home.
+            </li>
+            <li>
+              Security: iptables firewall rules, SSH hardening, and dedicated
+              VPN entry points instead of exposing web UIs.
+            </li>
+            <li>
+              Storage &amp; sync: rsync and rclone flows to remote storage
+              (e.g., Backblaze B2), plus structured directory layouts for media
+              and metadata.
+            </li>
+          </ul>
+        </div>
+
+        <div class="overlay-section">
+          <h3>Automation &amp; operations</h3>
+          <ul>
+            <li>
+              Custom scripts (Bash/PowerShell) for:
+              <ul>
+                <li>Automated backups with encryption and logging.</li>
+                <li>Media sync between a remote VPS and home via VPN.</li>
+                <li>Start/stop routines and integrity checks.</li>
+              </ul>
+            </li>
+            <li>
+              Focus on observability: structured logs, clear error handling, and
+              repeatable runbooks for recovery.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- graylogic-erp-site deep-dive overlay -->
+    <div class="overlay" id="erp-overlay" aria-hidden="true">
+      <div class="overlay-backdrop" data-overlay-close></div>
+      <div
+        class="overlay-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="erp-overlay-title"
+      >
+        <button
+          type="button"
+          class="overlay-close"
+          aria-label="Close ERP deep dive"
+          data-overlay-close
+        >
+          ×
+        </button>
+        <h2 class="overlay-title" id="erp-overlay-title">
+          graylogic-erp-site &mdash; deep dive
+        </h2>
+        <p class="overlay-tagline">
+          A production Odoo 18 ERP + website for a real electrical business,
+          running on a self-managed Docker stack.
+        </p>
+
+        <div class="overlay-section">
+          <h3>Stack overview</h3>
+          <ul>
+            <li>
+              Odoo 18 running in Docker containers, fronted by Traefik for HTTP
+              routing and automatic TLS.
+            </li>
+            <li>
+              Hosted on a Linux VM (e.g. Hetzner-style cloud), hardened and
+              managed as a proper production host rather than a toy lab box.
+            </li>
+            <li>
+              The public site (<code>graylogic.uk</code>) is backed by the same
+              stack that handles CRM, quotes, and jobs.
+            </li>
+          </ul>
+        </div>
+
+        <div class="overlay-section">
+          <h3>Reliability &amp; backups</h3>
+          <ul>
+            <li>
+              GPG-encrypted backups of the database and filestore, scripted in
+              both Linux shell and PowerShell for flexibility.
+            </li>
+            <li>
+              Restore procedures tested end-to-end so I can rebuild the stack
+              from bare VM + configs.
+            </li>
+            <li>
+              Firewalling and minimal open ports, with reverse proxy rules
+              carefully scoped to only required services.
+            </li>
+          </ul>
+        </div>
+
+        <div class="overlay-section">
+          <h3>Why it matters</h3>
+          <ul>
+            <li>
+              This isn’t a demo: it handles my real customer data, jobs, and
+              cashflow, so downtime and data loss actually hurt.
+            </li>
+            <li>
+              Shows I can own a full lifecycle: design, deploy, secure, backup,
+              and live with the system as an operator.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- usb-verifier deep-dive overlay -->
+    <div class="overlay" id="usb-overlay" aria-hidden="true">
+      <div class="overlay-backdrop" data-overlay-close></div>
+      <div
+        class="overlay-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="usb-overlay-title"
+      >
+        <button
+          type="button"
+          class="overlay-close"
+          aria-label="Close usb-verifier deep dive"
+          data-overlay-close
+        >
+          ×
+        </button>
+        <h2 class="overlay-title" id="usb-overlay-title">
+          usb-verifier &mdash; deep dive
+        </h2>
+        <p class="overlay-tagline">
+          A PowerShell-based verification engine for Windows install USBs,
+          designed to catch subtle tampering and give operators a clear verdict.
+        </p>
+
+        <div class="overlay-section">
+          <h3>Problem &amp; threat model</h3>
+          <ul>
+            <li>
+              Standard “copy ISO to USB” workflows make it easy for hidden
+              malware or modified binaries to sneak in unnoticed.
+            </li>
+            <li>
+              Goal: quickly tell whether a USB still faithfully represents a
+              known-good ISO, including the contents of WIM/ESD/SWM images.
+            </li>
+          </ul>
+        </div>
+
+        <div class="overlay-section">
+          <h3>Engine design</h3>
+          <ul>
+            <li>
+              Environment validation phase: checks tools, paths, and that the
+              ISO/USB are in a safe state to analyse.
+            </li>
+            <li>
+              Root (surface) comparison: walks ISO vs USB file trees, classifies
+              files as matched, modified, extra, or missing, and summarises
+              results.
+            </li>
+            <li>
+              Deep image analysis:
+              <ul>
+                <li>
+                  Mounts WIM/ESD and reassembles split SWM sets where needed.
+                </li>
+                <li>
+                  Hashes and inspects internal files, signatures, and key
+                  resources.
+                </li>
+                <li>
+                  Treats boot/install images differently from generic content to
+                  keep reports focused.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="overlay-section">
+          <h3>Reporting &amp; operations</h3>
+          <ul>
+            <li>
+              Structured log output with timestamps and phase tags, suitable for
+              dropping into tickets or security reviews.
+            </li>
+            <li>
+              Final human-readable summary section: integrity verdict, counts of
+              modified/extra/missing files, and any “hot” findings.
+            </li>
+            <li>
+              Built as a single script for now (~2k lines), but deliberately
+              structured for future refactors into modules.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <!-- Clamp-to-cloud detailed overlay -->
     <div class="overlay" id="clamp-overlay" aria-hidden="true">
       <div class="overlay-backdrop" data-overlay-close></div>
