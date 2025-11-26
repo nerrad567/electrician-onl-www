@@ -592,6 +592,68 @@ a {
     justify-content: space-between;
   }
 }
+/* Light theme: overlay */
+:root[data-theme="light"] .overlay-backdrop {
+  background: rgba(15, 23, 42, 0.25); /* softer, less ominous */
+  backdrop-filter: blur(4px);
+}
+
+:root[data-theme="light"] .overlay-dialog {
+  background: radial-gradient(
+    circle at top left,
+    #ffffff 0,
+    #f3f4f6 55%,
+    #e5e7eb 100%
+  );
+  border-color: #e5e7eb;
+}
+
+:root[data-theme="light"] .overlay-diagram {
+  background: rgba(243, 244, 246, 0.95); /* light grey */
+  border-color: #e5e7eb;
+}
+
+:root[data-theme="light"] .overlay-close {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #d1d5db;
+  color: #4b5563;
+}
+
+:root[data-theme="light"] .overlay-close:hover,
+:root[data-theme="light"] .overlay-close:focus-visible {
+  border-color: #9ca3af;
+  color: #111827;
+}
+
+/* Light theme: project-link button trigger */
+:root[data-theme="light"] .project-link--button {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #e5e7eb;
+  color: #111827;
+}
+
+:root[data-theme="light"] .project-link--button:hover,
+:root[data-theme="light"] .project-link--button:focus-visible {
+  border-color: #9ca3af;
+}
+/* Light theme: nav + hero badge */
+:root[data-theme="light"] .site-nav a {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #e5e7eb;
+  color: #4b5563;
+}
+
+:root[data-theme="light"] .site-nav a:hover,
+:root[data-theme="light"] .site-nav a:focus-visible {
+  border-color: #9ca3af;
+  color: #111827;
+}
+
+:root[data-theme="light"] .hero-badge {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #e5e7eb;
+  color: #6b7280;
+}
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
