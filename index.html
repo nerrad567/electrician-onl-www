@@ -135,6 +135,51 @@
             </div>
 
             <div class="project-block">
+              <h3 class="project-title">usb-verifier</h3>
+              <p class="project-body">
+                A ~2,000 line PowerShell script that verifies Windows install
+                USBs against ISO images, including deep WIM/ESD/SWM analysis,
+                signature checks, and structured reporting. Designed to catch
+                tampering and subtle modifications, not just missing files.
+              </p>
+              <p class="project-meta">
+                <span>PowerShell</span>
+                <span>ISO &amp; USB diff engine</span>
+                <span>Deep WIM/ESD scanning</span>
+              </p>
+              <ul class="project-list">
+                <li>
+                  Compares ISO vs USB surface files and flags modified, extra,
+                  and missing items with targeted summaries instead of noisy
+                  diffs.
+                </li>
+                <li>
+                  Performs deep analysis of WIM/ESD/SWM images (including
+                  reassembled split images), checking internal hashes,
+                  signatures, and resources.
+                </li>
+                <li>
+                  Produces a structured text report with per-phase logging,
+                  threat hints, and a final integrity summary to support
+                  real-world triage.
+                </li>
+                <li>
+                  Built with robustness in mind: progress logging, error
+                  handling, safe temp usage, and support for large media
+                  creation workflows.
+                </li>
+              </ul>
+              <a
+                class="project-link"
+                href="https://github.com/nerrad567/usb-verifier"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View on GitHub
+              </a>
+            </div>
+
+            <div class="project-block">
               <h3 class="project-title">Tooling</h3>
               <p class="project-body">
                 PowerShell and Odoo tooling built to solve real problems:
@@ -143,10 +188,6 @@
                 <li>
                   <strong>ssh-login-helper</strong> &mdash; SSH launcher using
                   config + JSON metadata.
-                </li>
-                <li>
-                  <strong>usb-verifier</strong> &mdash; Windows install USB
-                  integrity and deep WIM scanner.
                 </li>
                 <li>
                   <strong>odoo-job-request</strong> &mdash; Odoo 18 job request
