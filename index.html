@@ -13,14 +13,20 @@
   <body>
     <div class="page">
       <header class="site-header">
-        <div class="site-logo">electrician.onl</div>
+        <a href="https://electrician.onl" class="site-logo">electrician.onl</a>
+
         <nav class="site-nav">
           <a href="#profile" data-overlay-target="#profile-overlay">Profile</a>
-          <a href="#strengths">Strengths</a>
-          <a href="#projects">Projects</a>
-          <a href="#fit">Role fit</a>
-          <a href="#contact">Contact</a>
+          <a href="#strengths" data-overlay-target="#strengths-overlay"
+            >Strengths</a
+          >
+          <a href="#projects" data-overlay-target="#projects-overlay"
+            >Projects</a
+          >
+          <a href="#fit" data-overlay-target="#fit-overlay">Role fit</a>
+          <a href="#contact" data-overlay-target="#contact-overlay">Contact</a>
         </nav>
+
         <button
           type="button"
           class="theme-toggle"
@@ -684,6 +690,303 @@
             <li>
               Built as a single script for now (~2k lines), but deliberately
               structured for future refactors into modules.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Strengths deep-dive overlay -->
+    <div class="overlay" id="strengths-overlay" aria-hidden="true">
+      <div class="overlay-backdrop" data-overlay-close></div>
+      <div
+        class="overlay-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="strengths-overlay-title"
+      >
+        <button
+          type="button"
+          class="overlay-close"
+          aria-label="Close strengths details"
+          data-overlay-close
+        >
+          ×
+        </button>
+        <h2 class="overlay-title" id="strengths-overlay-title">
+          Strengths &amp; how I work
+        </h2>
+        <p class="overlay-tagline">
+          Reliability, security awareness, and clear communication shaped by
+          years of electrical work and running real systems.
+        </p>
+
+        <div class="overlay-section">
+          <h3>Reliability mindset</h3>
+          <ul>
+            <li>
+              From consumer units to containers: I treat changes as “live work”,
+              with isolation, tests, and defined rollback.
+            </li>
+            <li>
+              Backups are not theoretical: database and filestore restores are
+              tested, not assumed.
+            </li>
+            <li>
+              Prefer boring, observable systems over clever but fragile setups.
+            </li>
+          </ul>
+        </div>
+
+        <div class="overlay-section">
+          <h3>Security awareness</h3>
+          <ul>
+            <li>
+              VPN-first design: WireGuard tunnels instead of exposing admin
+              interfaces to the internet.
+            </li>
+            <li>
+              Principle of least privilege in firewalling, SSH, and service
+              design.
+            </li>
+            <li>
+              Comfortable with threat models: from “home lab paranoia” to
+              thinking about tampered install media.
+            </li>
+          </ul>
+        </div>
+
+        <div class="overlay-section">
+          <h3>Communication &amp; documentation</h3>
+          <ul>
+            <li>
+              Used to explaining findings to non-technical clients in EICRs and
+              reports.
+            </li>
+            <li>
+              Write structured READMEs and logs so someone else can operate what
+              I build.
+            </li>
+            <li>
+              Prefer honest status (“this part is experimental / rough”) over
+              overselling.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects overview overlay -->
+    <div class="overlay" id="projects-overlay" aria-hidden="true">
+      <div class="overlay-backdrop" data-overlay-close></div>
+      <div
+        class="overlay-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="projects-overlay-title"
+      >
+        <button
+          type="button"
+          class="overlay-close"
+          aria-label="Close projects overview"
+          data-overlay-close
+        >
+          ×
+        </button>
+        <h2 class="overlay-title" id="projects-overlay-title">
+          Projects &amp; what they show
+        </h2>
+        <p class="overlay-tagline">
+          A snapshot of how I approach real problems with infrastructure,
+          tooling, and automation.
+        </p>
+
+        <div class="overlay-section">
+          <h3>secure-media-lab</h3>
+          <p>
+            VPN-only home/remote lab built on Debian/WSL2, Docker, WireGuard,
+            and scripted backup/sync flows.
+          </p>
+          <ul>
+            <li>Shows I can design and operate a secure, networked lab.</li>
+            <li>Includes firewalling, SSH/WG hardening, and remote storage.</li>
+          </ul>
+        </div>
+
+        <div class="overlay-section">
+          <h3>graylogic-erp-site</h3>
+          <p>
+            Production Odoo 18 ERP + website for my electrical business,
+            including CRM, jobs, and invoicing.
+          </p>
+          <ul>
+            <li>
+              Demonstrates ownership of a real production stack: deploy, secure,
+              back up, and restore.
+            </li>
+            <li>
+              Uses Docker, Traefik, GPG-encrypted backups, and a hardened VM.
+            </li>
+          </ul>
+        </div>
+
+        <div class="overlay-section">
+          <h3>usb-verifier</h3>
+          <p>
+            A ~2k-line PowerShell verification engine for Windows install USBs,
+            including deep WIM/ESD/SWM inspection.
+          </p>
+          <ul>
+            <li>Demonstrates comfort with complex scripting and tooling.</li>
+            <li>
+              Focused on real-world safety: detecting tampering and giving a
+              clear verdict.
+            </li>
+          </ul>
+        </div>
+
+        <div class="overlay-section">
+          <h3>Clamp-to-cloud 100A energy monitor</h3>
+          <p>
+            Phase 0 planning for a non-invasive 100&nbsp;A IoT-style monitoring
+            node using CT, ESP32, MQTT, and a containerised backend.
+          </p>
+          <ul>
+            <li>
+              Bridges electrical knowledge (CTs, mains tails) with IoT design.
+            </li>
+            <li>
+              Shows how I structure a project from hardware spec to backend
+              architecture.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Role fit deep-dive overlay -->
+    <div class="overlay" id="fit-overlay" aria-hidden="true">
+      <div class="overlay-backdrop" data-overlay-close></div>
+      <div
+        class="overlay-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="fit-overlay-title"
+      >
+        <button
+          type="button"
+          class="overlay-close"
+          aria-label="Close role fit details"
+          data-overlay-close
+        >
+          ×
+        </button>
+        <h2 class="overlay-title" id="fit-overlay-title">
+          Role fit &amp; where I add value
+        </h2>
+        <p class="overlay-tagline">
+          I’m looking for roles where reliability, safety, and real operations
+          matter as much as tools and frameworks.
+        </p>
+
+        <div class="overlay-section">
+          <h3>Target roles</h3>
+          <ul>
+            <li>Junior DevOps / Infrastructure engineer.</li>
+            <li>Platform / SRE-style roles focused on reliability.</li>
+            <li>
+              OT / ICS support roles bridging electrical work and infrastructure
+              (SCADA, secure remote access, field wiring).
+            </li>
+          </ul>
+        </div>
+
+        <div class="overlay-section">
+          <h3>What I bring</h3>
+          <ul>
+            <li>
+              Hands-on experience with Linux, Docker, VPNs, and self-hosted
+              applications.
+            </li>
+            <li>
+              A safety-first mindset from electrical work: methodical,
+              risk-aware, and used to formal inspections and reports.
+            </li>
+            <li>
+              Comfort working at the intersection of physical systems and
+              software.
+            </li>
+          </ul>
+        </div>
+
+        <div class="overlay-section">
+          <h3>How I like to work</h3>
+          <ul>
+            <li>Small, iterative changes with clear logging and rollback.</li>
+            <li>
+              Honest about unknowns and happy to document as I go, not as an
+              afterthought.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact & collaboration overlay -->
+    <div class="overlay" id="contact-overlay" aria-hidden="true">
+      <div class="overlay-backdrop" data-overlay-close></div>
+      <div
+        class="overlay-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contact-overlay-title"
+      >
+        <button
+          type="button"
+          class="overlay-close"
+          aria-label="Close contact details"
+          data-overlay-close
+        >
+          ×
+        </button>
+        <h2 class="overlay-title" id="contact-overlay-title">
+          Contact, collaboration &amp; practicalities
+        </h2>
+        <p class="overlay-tagline">
+          How I prefer to engage with hiring managers, teams, and collaborators.
+        </p>
+
+        <div class="overlay-section">
+          <h3>Contact channels</h3>
+          <ul>
+            <li>
+              <strong>Terminal CV:</strong> a technical view of my skills at
+              <code>terminal.electrician.onl</code>.
+            </li>
+            <li>
+              <strong>GitHub:</strong> primary place to see how I structure
+              code, scripts, and documentation.
+            </li>
+            <li>
+              Direct email / phone shared on request for serious opportunities.
+            </li>
+          </ul>
+        </div>
+
+        <div class="overlay-section">
+          <h3>What I’m open to</h3>
+          <ul>
+            <li>
+              Roles where I can grow from “serious hobbyist” to professional in
+              DevOps / infrastructure / OT.
+            </li>
+            <li>
+              Practical technical assessments that reflect real work: debugging,
+              improving scripts, or designing small systems.
+            </li>
+            <li>
+              Hybrid roles that respect both the field side (sites, hardware)
+              and the infrastructure side (servers, networks, security).
             </li>
           </ul>
         </div>
