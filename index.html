@@ -223,13 +223,26 @@
               <ul class="project-list">
                 <li>
                   <strong>ssh-login-helper</strong> &mdash; SSH launcher using
-                  config + JSON metadata.
+                  OpenSSH config + JSON metadata, with an interactive menu and
+                  post-connect actions.
                 </li>
                 <li>
                   <strong>odoo-job-request</strong> &mdash; Odoo 18 job request
-                  portal with S3-compatible uploads.
+                  portal with S3-compatible uploads and structured CRM leads.
+                </li>
+                <li>
+                  <strong>bookish-funicular</strong> &mdash; toolbox repo of
+                  shell and Python utilities for WireGuard, Docker, firewalling,
+                  monitoring, and systemd service wiring.
                 </li>
               </ul>
+              <button
+                type="button"
+                class="project-link project-link--button"
+                data-overlay-target="#tooling-overlay"
+              >
+                View detailed tooling profile
+              </button>
               <a
                 class="project-link"
                 href="https://github.com/nerrad567?tab=repositories"
@@ -989,6 +1002,182 @@
               and the infrastructure side (servers, networks, security).
             </li>
           </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tooling detailed overlay -->
+    <div class="overlay" id="tooling-overlay" aria-hidden="true">
+      <div class="overlay-backdrop" data-overlay-close></div>
+      <div
+        class="overlay-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="tooling-overlay-title"
+      >
+        <button
+          type="button"
+          class="overlay-close"
+          aria-label="Close tooling details"
+          data-overlay-close
+        >
+          ×
+        </button>
+
+        <h2 class="overlay-title" id="tooling-overlay-title">
+          Tooling &amp; automation &mdash; PowerShell, Odoo and Linux scripting
+        </h2>
+        <p class="overlay-tagline">
+          Opinionated tools built to remove friction in real workflows: SSH
+          access, media and lab operations, and Odoo-powered job intake.
+        </p>
+
+        <div class="overlay-section">
+          <h3>ssh-login-helper</h3>
+          <p>
+            <strong>ssh-login-helper</strong> is a PowerShell-first SSH launcher
+            that treats your <code>~/.ssh/config</code> as a source of truth and
+            layers a structured JSON metadata file (<code>conf.json</code>) on
+            top.
+          </p>
+          <ul>
+            <li>
+              Parses OpenSSH config and exposes hosts as a clean, interactive
+              menu (hostnames, friendly labels, and tags).
+            </li>
+            <li>
+              Uses JSON metadata to define defaults (user, port, identity file,
+              working directory, jump hosts, etc.) and descriptive text for each
+              entry.
+            </li>
+            <li>
+              Supports post-connect commands so repetitive sequences (e.g.
+              <code>cd</code> into a path, tail logs, attach to a tmux session)
+              run automatically after login.
+            </li>
+            <li>
+              Discovers keys and config intelligently, designed to work with
+              your existing <code>.ssh</code> layout rather than fighting it.
+            </li>
+            <li>
+              Implemented in idiomatic PowerShell with functions, structured
+              logging, error handling, and guard rails so you can extend it
+              without turning it into a one-off script.
+            </li>
+          </ul>
+          <p>
+            The goal is a <em>repeatable SSH UX</em>: instead of half-remembered
+            commands in shell history, you get a predictable entrypoint into
+            your estate that still respects your existing OpenSSH config.
+          </p>
+          <p class="overlay-tagline">
+            Repo:
+            <a
+              href="https://github.com/nerrad567/ssh-login-helper"
+              target="_blank"
+              rel="noreferrer"
+              >ssh-login-helper</a
+            >
+          </p>
+        </div>
+
+        <div class="overlay-section">
+          <h3>odoo-job-request</h3>
+          <p>
+            <strong>odoo-job-request</strong> is an Odoo 18 module that turns a
+            public-facing form into a structured lead factory for your CRM.
+          </p>
+          <ul>
+            <li>
+              Custom portal form that collects job details, notes, and
+              supporting files (photos, PDFs) and creates
+              <code>crm.lead</code> records with clean metadata.
+            </li>
+            <li>
+              File uploads wired to an S3-compatible backend, keeping the Odoo
+              instance lean while still exposing attachments in the internal
+              lead view.
+            </li>
+            <li>
+              Field validation and sanitisation to make sure “whatever the
+              client typed in a browser” doesn’t become a mess in the DB.
+            </li>
+            <li>
+              Developed using Odoo 18 dev tooling with hot-reload patterns
+              (<code>--dev=all</code>), and structured module layout (models,
+              controllers, templates).
+            </li>
+          </ul>
+          <p>
+            This sits at the intersection of your electrical work and
+            back-office automation: a real business need (job requests) solved
+            with a proper Odoo extension instead of a one-off form.
+          </p>
+        </div>
+
+        <div class="overlay-section">
+          <h3>bookish-funicular &mdash; scripting toolbox</h3>
+          <p>
+            <strong>bookish-funicular</strong> is your public dump of “useful
+            scripts that earned their place” rather than toy snippets: mostly
+            Shell with a slice of Python.
+          </p>
+          <ul>
+            <li>
+              Organised by domain: <code>wireguard</code>, <code>docker</code>,
+              <code>firewall</code>, <code>monitoring</code>,
+              <code>systemctl_service_files</code>,
+              <code>file_folder_utilities</code>, and more.
+            </li>
+            <li>
+              Captures how you actually run and harden systems: WireGuard
+              helpers, systemd unit files, firewall rules, and laptop/utility
+              scripts.
+            </li>
+            <li>
+              Shows comfort hopping between PowerShell, Bash, and Python as
+              needed rather than being locked to a single toolchain.
+            </li>
+          </ul>
+          <p class="overlay-tagline">
+            Repo:
+            <a
+              href="https://github.com/nerrad567/bookish-funicular"
+              target="_blank"
+              rel="noreferrer"
+              >bookish-funicular</a
+            >
+          </p>
+        </div>
+
+        <div class="overlay-section">
+          <h3>What this says about your skills</h3>
+          <ul>
+            <li>
+              <strong>PowerShell as a first-class language</strong>: large,
+              structured scripts with functions, logging, and configuration
+              files rather than ad-hoc one-liners.
+            </li>
+            <li>
+              <strong>Linux and networking literacy</strong>: WireGuard, Docker,
+              firewall rules, systemd, and monitoring stitched together into
+              working systems.
+            </li>
+            <li>
+              <strong>Odoo / Python backend awareness</strong>: ORM models,
+              controllers, templates, and external object storage
+              (S3-compatible) for attachments.
+            </li>
+            <li>
+              <strong>Security-minded defaults</strong>: SSH workflows, VPN-only
+              access patterns, and an instinct to log, verify, and back up.
+            </li>
+          </ul>
+          <p>
+            The common thread: you build tools as if someone else has to use
+            them in anger later &mdash; future-you, a coworker, or a hiring
+            manager looking for evidence of real operational thinking.
+          </p>
         </div>
       </div>
     </div>
