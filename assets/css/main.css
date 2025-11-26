@@ -466,6 +466,132 @@ a {
     padding: 1.1rem 1rem 1rem;
   }
 }
+/* Light theme overrides */
+:root[data-theme="light"] {
+  --bg: #f4f4f5;
+  --bg-elevated: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --accent: #111827;
+  --border: #d1d5db;
+  --shadow-soft: 0 0 0 1px rgba(15, 23, 42, 0.06),
+    0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+/* Light theme backgrounds / surfaces */
+:root[data-theme="light"] body {
+  background: radial-gradient(
+    circle at top,
+    #ffffff 0,
+    #e5e7eb 50%,
+    #d1d5db 100%
+  );
+}
+
+:root[data-theme="light"] .shell {
+  background: radial-gradient(
+    circle at top left,
+    #ffffff 0,
+    #f3f4f6 55%,
+    #e5e7eb 100%
+  );
+}
+
+:root[data-theme="light"] .site-logo {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #e5e7eb;
+  color: #4b5563;
+}
+
+:root[data-theme="light"] .card {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+:root[data-theme="light"] .card--highlight {
+  border-color: #e5e7eb;
+}
+
+:root[data-theme="light"] .project-block {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #e5e7eb;
+}
+
+:root[data-theme="light"] .project-meta span {
+  border-color: #e5e7eb;
+}
+
+:root[data-theme="light"] .site-footer {
+  border-top-color: #e5e7eb;
+}
+
+:root[data-theme="light"] a {
+  color: #111827;
+}
+
+/* Buttons in light theme */
+:root[data-theme="light"] .btn-primary {
+  background: #111827;
+  color: #f9fafb;
+  border-color: #111827;
+}
+
+:root[data-theme="light"] .btn-primary:hover,
+:root[data-theme="light"] .btn-primary:focus-visible {
+  background: #0f172a;
+  border-color: #0f172a;
+}
+
+:root[data-theme="light"] .btn-ghost {
+  background: rgba(255, 255, 255, 0.9);
+  color: #111827;
+  border-color: #e5e7eb;
+}
+
+:root[data-theme="light"] .btn-ghost:hover,
+:root[data-theme="light"] .btn-ghost:focus-visible {
+  border-color: #9ca3af;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.theme-toggle-icon {
+  font-size: 0.85rem;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  color: var(--text);
+  border-color: #666;
+  outline: none;
+}
+
+/* Light mode appearance for toggle */
+:root[data-theme="light"] .theme-toggle {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #d1d5db;
+  color: #4b5563;
+}
+
+/* Keep header layout tidy with toggle */
+@media (max-width: 600px) {
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {

@@ -16,6 +16,54 @@
       target.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
+
+  // Theme toggle (light / dark)
+  const root = document.documentElement;
+  const themeToggleBtn = document.getElementById("theme-toggle");
+  const themeLabel = themeToggleBtn
+    ? themeToggleBtn.querySelector(".theme-toggle-label")
+    : null;
+  const themeIcon = themeToggleBtn
+    ? themeToggleBtn.querySelector(".theme-toggle-icon")
+    : null;
+
+  function applyTheme(theme) {
+    const normalized = theme === "light" ? "light" : "dark";
+    root.setAttribute("data-theme", normalized);
+    localStorage.setItem("theme", normalized);
+    if (themeLabel && themeIcon) {
+      if (normalized === "light") {
+        themeLabel.textContent = "Light mode";
+        themeIcon.textContent = "☀️";
+      } else {
+        themeLabel.textContent = "Dark mode";
+        themeIcon.textContent = "🌙";
+      }
+    }
+  }
+
+  // Initial theme from localStorage or default (data-theme on <html>)
+  (function initTheme() {
+    const stored = localStorage.getItem("theme");
+    const currentAttr = root.getAttribute("data-theme");
+    if (stored === "light" || stored === "dark") {
+      applyTheme(stored);
+    } else if (currentAttr === "light" || currentAttr === "dark") {
+      applyTheme(currentAttr);
+    } else {
+      applyTheme("dark");
+    }
+  })();
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", () => {
+      const current =
+        root.getAttribute("data-theme") === "light" ? "light" : "dark";
+      const next = current === "light" ? "dark" : "light";
+      applyTheme(next);
+    });
+  }
+
   // Overlay / modal handling for detailed project views
   const overlayTriggers = document.querySelectorAll("[data-overlay-target]");
   const overlays = document.querySelectorAll(".overlay");
@@ -23,14 +71,12 @@
   function openOverlay(overlay) {
     overlay.classList.add("overlay--open");
     overlay.setAttribute("aria-hidden", "false");
-    // Lock background scroll
     document.body.style.overflow = "hidden";
   }
 
   function closeOverlay(overlay) {
     overlay.classList.remove("overlay--open");
     overlay.setAttribute("aria-hidden", "true");
-    // Restore scroll (basic, but fine for a single overlay use-case)
     document.body.style.overflow = "";
   }
 
