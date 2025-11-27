@@ -78,8 +78,8 @@
           <article class="card">
             <h2 class="card-title">Profile</h2>
             <p class="card-body">
-              I’m an electrician who treats infrastructure like a live
-              installation: planned work, safe changes, and clear documentation.
+              Electrician with hands-on experience operating self-hosted
+              infrastructure and automation tooling.
             </p>
             <ul class="card-list">
               <li>
@@ -99,15 +99,16 @@
             <h2 class="card-title">Strengths</h2>
             <ul class="card-list">
               <li>
-                <strong>Real systems:</strong> live Odoo, real users, real data.
+                <strong>Production systems:</strong> live Odoo instance with
+                real users and data.
               </li>
               <li>
-                <strong>Reliability mindset:</strong> backups, restores, and
-                rollback paths tested.
+                <strong>Reliability:</strong> backups, restores, and rollback
+                paths tested in practice.
               </li>
               <li>
                 <strong>Security-aware:</strong> WireGuard VPNs, firewalls,
-                minimal surface area.
+                minimal exposed services.
               </li>
               <li>
                 <strong>Communication:</strong> used to explaining technical
@@ -233,7 +234,8 @@
             <div class="project-block">
               <h3 class="project-title">Tooling</h3>
               <p class="project-body">
-                PowerShell and Odoo tooling built to solve real problems:
+                PowerShell and Odoo tooling built to solve specific operational
+                problems:
               </p>
               <ul class="project-list">
                 <li>
@@ -304,13 +306,9 @@
                 <li>
                   Security profile: baseline MQTT over TLS, with an optional
                   hardened mode using MQTT over QUIC and WireGuard for
-                  adversarial or compliance-heavy deployments.
+                  deployments with stricter threat models.
                 </li>
               </ul>
-              <!-- Future: link to dedicated repo / docs when created -->
-              <!-- <a class="project-link" href="https://github.com/..." target="_blank" rel="noreferrer">
-                   Planning & design docs
-                 </a> -->
               <button
                 type="button"
                 class="project-link project-link--button"
@@ -337,7 +335,7 @@
             </ul>
             <p class="card-body">
               I bring a safety-first mindset from electrical work, plus
-              experience running my own “production” systems.
+              experience running my own production systems.
             </p>
           </article>
         </section>
@@ -442,6 +440,7 @@
         </footer>
       </main>
     </div>
+
     <!-- Profile / background deep-dive overlay -->
     <div class="overlay" id="profile-overlay" aria-hidden="true">
       <div class="overlay-backdrop" data-overlay-close></div>
@@ -463,8 +462,8 @@
           Background &amp; working style
         </h2>
         <p class="overlay-tagline">
-          Time-served electrician running real production stacks, moving toward
-          DevOps / infrastructure and OT/ICS support roles.
+          Electrician running real production stacks and moving into DevOps /
+          infrastructure and OT/ICS support roles.
         </p>
 
         <div class="overlay-section">
@@ -491,16 +490,17 @@
           <h3>How I approach systems</h3>
           <ul>
             <li>
-              Treat infrastructure like a live installation: planned changes,
-              rollback paths, backups tested before I trust them.
+              Treat infrastructure changes as production work, with planned
+              changes, isolation where required, rollback paths, and tested
+              backups.
             </li>
             <li>
               Prefer simple, observable designs: logs, structured reports, and
-              documentation that a future-me or another engineer can follow.
+              documentation that a future operator can follow.
             </li>
             <li>
               Security-aware by default: WireGuard, minimal exposed services,
-              and “assume the internet is hostile” as a baseline.
+              and assuming the internet is hostile as a baseline.
             </li>
           </ul>
         </div>
@@ -546,7 +546,7 @@
         </h2>
         <p class="overlay-tagline">
           A VPN-first home lab and remote stack built on Debian/WSL2, Docker,
-          and automation, designed to keep real media and services safe.
+          and automation, designed to keep media and services under my control.
         </p>
 
         <div class="overlay-section">
@@ -554,12 +554,11 @@
           <ul>
             <li>
               I wanted a lab that mirrored “real” infrastructure: remote
-              services, storage, and automation, but with a strong security
-              bias.
+              services, storage, and automation, with a strong security bias.
             </li>
             <li>
               Requirements: VPN-only ingress, reproducible with code, encrypted
-              backups, and minimal manual babysitting.
+              backups, and minimal manual intervention.
             </li>
           </ul>
         </div>
@@ -599,8 +598,8 @@
               </ul>
             </li>
             <li>
-              Focus on observability: structured logs, clear error handling, and
-              repeatable runbooks for recovery.
+              Focus on observability: structured logs, explicit error handling,
+              and repeatable runbooks for recovery.
             </li>
           </ul>
         </div>
@@ -640,8 +639,8 @@
               routing and automatic TLS.
             </li>
             <li>
-              Hosted on a Linux VM (e.g. Hetzner-style cloud), hardened and
-              managed as a proper production host rather than a toy lab box.
+              Hosted on a Linux VM in the cloud, hardened and managed as a
+              production host rather than a short-lived lab box.
             </li>
             <li>
               The public site (<code>graylogic.uk</code>) is backed by the same
@@ -655,7 +654,7 @@
           <ul>
             <li>
               GPG-encrypted backups of the database and filestore, scripted in
-              both Linux shell and PowerShell for flexibility.
+              both Linux shell and PowerShell.
             </li>
             <li>
               Restore procedures tested end-to-end so I can rebuild the stack
@@ -663,7 +662,7 @@
             </li>
             <li>
               Firewalling and minimal open ports, with reverse proxy rules
-              carefully scoped to only required services.
+              scoped to only required services.
             </li>
           </ul>
         </div>
@@ -672,12 +671,12 @@
           <h3>Why it matters</h3>
           <ul>
             <li>
-              This isn’t a demo: it handles my real customer data, jobs, and
-              cashflow, so downtime and data loss actually hurt.
+              This is not a demo: it handles real customer data, jobs, and
+              cashflow, so downtime and data loss have consequences.
             </li>
             <li>
-              Shows I can own a full lifecycle: design, deploy, secure, backup,
-              and live with the system as an operator.
+              Shows I can own a full lifecycle: design, deploy, secure, back up,
+              and operate the system.
             </li>
           </ul>
         </div>
@@ -759,15 +758,15 @@
           <ul>
             <li>
               Structured log output with timestamps and phase tags, suitable for
-              dropping into tickets or security reviews.
+              use in tickets or security reviews.
             </li>
             <li>
               Final human-readable summary section: integrity verdict, counts of
-              modified/extra/missing files, and any “hot” findings.
+              modified/extra/missing files, and any key findings.
             </li>
             <li>
-              Built as a single script for now (~2k lines), but deliberately
-              structured for future refactors into modules.
+              Built as a single script for now (~2k lines), but structured for
+              future refactors into modules.
             </li>
           </ul>
         </div>
@@ -803,15 +802,15 @@
           <h3>Reliability mindset</h3>
           <ul>
             <li>
-              From consumer units to containers: I treat changes as “live work”,
-              with isolation, tests, and defined rollback.
+              Treat changes as production work, with isolation where needed,
+              tests, and defined rollback.
             </li>
             <li>
-              Backups are not theoretical: database and filestore restores are
-              tested, not assumed.
+              Backups are verified: database and filestore restores are tested,
+              not assumed.
             </li>
             <li>
-              Prefer boring, observable systems over clever but fragile setups.
+              Prefer simple, observable systems over complex, fragile setups.
             </li>
           </ul>
         </div>
@@ -828,7 +827,7 @@
               design.
             </li>
             <li>
-              Comfortable with threat models: from “home lab paranoia” to
+              Comfortable with threat models: from hardening home lab setups to
               thinking about tampered install media.
             </li>
           </ul>
@@ -846,7 +845,7 @@
               I build.
             </li>
             <li>
-              Prefer honest status (“this part is experimental / rough”) over
+              Prefer clear status (“this part is experimental / rough”) over
               overselling.
             </li>
           </ul>
@@ -917,8 +916,8 @@
           <ul>
             <li>Demonstrates comfort with complex scripting and tooling.</li>
             <li>
-              Focused on real-world safety: detecting tampering and giving a
-              clear verdict.
+              Focused on safety: detecting tampering and providing a clear
+              verdict.
             </li>
           </ul>
         </div>
@@ -1002,8 +1001,8 @@
           <ul>
             <li>Small, iterative changes with clear logging and rollback.</li>
             <li>
-              Honest about unknowns and happy to document as I go, not as an
-              afterthought.
+              Honest about unknowns and comfortable documenting as I go, not as
+              an afterthought.
             </li>
           </ul>
         </div>
@@ -1093,22 +1092,22 @@
           Tooling &amp; automation &mdash; PowerShell, Odoo and Linux scripting
         </h2>
         <p class="overlay-tagline">
-          Opinionated tools built to remove friction in real workflows: SSH
-          access, media and lab operations, and Odoo-powered job intake.
+          Tools built to remove friction in recurring workflows: SSH access,
+          media and lab operations, and Odoo-powered job intake.
         </p>
 
         <div class="overlay-section">
           <h3>ssh-login-helper</h3>
           <p>
             <strong>ssh-login-helper</strong> is a PowerShell-first SSH launcher
-            that treats your <code>~/.ssh/config</code> as a source of truth and
+            that treats <code>~/.ssh/config</code> as a source of truth and
             layers a structured JSON metadata file (<code>conf.json</code>) on
             top.
           </p>
           <ul>
             <li>
               Parses OpenSSH config and exposes hosts as a clean, interactive
-              menu (hostnames, friendly labels, and tags).
+              menu (hostnames, labels, and tags).
             </li>
             <li>
               Uses JSON metadata to define defaults (user, port, identity file,
@@ -1116,24 +1115,23 @@
               entry.
             </li>
             <li>
-              Supports post-connect commands so repetitive sequences (e.g.
+              Supports post-connect commands so repetitive sequences (for
+              example,
               <code>cd</code> into a path, tail logs, attach to a tmux session)
               run automatically after login.
             </li>
             <li>
-              Discovers keys and config intelligently, designed to work with
-              your existing <code>.ssh</code> layout rather than fighting it.
+              Discovers keys and config intelligently, designed to work with an
+              existing <code>.ssh</code> layout rather than replace it.
             </li>
             <li>
-              Implemented in idiomatic PowerShell with functions, structured
-              logging, error handling, and guard rails so you can extend it
-              without turning it into a one-off script.
+              Implemented in structured PowerShell with functions, logging,
+              error handling, and configuration files.
             </li>
           </ul>
           <p>
-            The goal is a <em>repeatable SSH UX</em>: instead of half-remembered
-            commands in shell history, you get a predictable entrypoint into
-            your estate that still respects your existing OpenSSH config.
+            The goal is a repeatable SSH entry point instead of ad-hoc commands
+            pulled from shell history.
           </p>
           <p class="overlay-tagline">
             Repo:
@@ -1150,7 +1148,7 @@
           <h3>odoo-job-request</h3>
           <p>
             <strong>odoo-job-request</strong> is an Odoo 18 module that turns a
-            public-facing form into a structured lead factory for your CRM.
+            public-facing form into a structured lead source for the CRM.
           </p>
           <ul>
             <li>
@@ -1164,28 +1162,28 @@
               lead view.
             </li>
             <li>
-              Field validation and sanitisation to make sure “whatever the
-              client typed in a browser” doesn’t become a mess in the DB.
+              Field validation and sanitisation to keep unstructured browser
+              input under control in the database.
             </li>
             <li>
               Developed using Odoo 18 dev tooling with hot-reload patterns
-              (<code>--dev=all</code>), and structured module layout (models,
+              (<code>--dev=all</code>) and a structured module layout (models,
               controllers, templates).
             </li>
           </ul>
           <p>
-            This sits at the intersection of your electrical work and
-            back-office automation: a real business need (job requests) solved
-            with a proper Odoo extension instead of a one-off form.
+            This sits at the intersection of my electrical work and back-office
+            automation: a real business need (job requests) solved with an Odoo
+            extension rather than a one-off form.
           </p>
         </div>
 
         <div class="overlay-section">
           <h3>bookish-funicular &mdash; scripting toolbox</h3>
           <p>
-            <strong>bookish-funicular</strong> is your public dump of “useful
-            scripts that earned their place” rather than toy snippets: mostly
-            Shell with a slice of Python.
+            <strong>bookish-funicular</strong> is a public toolbox of scripts
+            that have been used in practice rather than toy snippets: mostly
+            Shell with some Python.
           </p>
           <ul>
             <li>
@@ -1195,13 +1193,12 @@
               <code>file_folder_utilities</code>, and more.
             </li>
             <li>
-              Captures how you actually run and harden systems: WireGuard
-              helpers, systemd unit files, firewall rules, and laptop/utility
-              scripts.
+              Captures how I run and harden systems: WireGuard helpers, systemd
+              unit files, firewall rules, and laptop/utility scripts.
             </li>
             <li>
-              Shows comfort hopping between PowerShell, Bash, and Python as
-              needed rather than being locked to a single toolchain.
+              Shows comfort switching between PowerShell, Bash, and Python as
+              needed rather than relying on a single toolchain.
             </li>
           </ul>
           <p class="overlay-tagline">
@@ -1216,7 +1213,7 @@
         </div>
 
         <div class="overlay-section">
-          <h3>What this says about your skills</h3>
+          <h3>What this shows</h3>
           <ul>
             <li>
               <strong>PowerShell as a first-class language</strong>: large,
@@ -1225,8 +1222,8 @@
             </li>
             <li>
               <strong>Linux and networking literacy</strong>: WireGuard, Docker,
-              firewall rules, systemd, and monitoring stitched together into
-              working systems.
+              firewall rules, systemd, and monitoring combined into working
+              systems.
             </li>
             <li>
               <strong>Odoo / Python backend awareness</strong>: ORM models,
@@ -1239,9 +1236,8 @@
             </li>
           </ul>
           <p>
-            The common thread: you build tools as if someone else has to use
-            them in anger later &mdash; future-you, a coworker, or a hiring
-            manager looking for evidence of real operational thinking.
+            The common thread: I build tools so they can be operated and
+            maintained later, whether by me or by another engineer.
           </p>
         </div>
       </div>
@@ -1276,10 +1272,10 @@
         <div class="overlay-section">
           <h3>System overview</h3>
           <p>
-            The goal is a single 100&nbsp;A incomer clamp that behaves like a
-            proper IoT node: non-invasive CT on the mains tails, minimal logic
-            on the ESP32, and all the “brains” (storage, processing,
-            visualisation) on a remote Debian/VPS stack.
+            The goal is a single 100&nbsp;A incomer clamp that behaves like an
+            IoT node: non-invasive CT on the mains tails, minimal logic on the
+            ESP32, and processing, storage, and visualisation on a remote
+            Debian/VPS stack.
           </p>
           <pre class="overlay-diagram"><code>[100 A mains incomer]
    ↓ (non-invasive)
@@ -1321,7 +1317,7 @@
             <li>
               <strong>Burden power:</strong> at 50&nbsp;mA,
               <code>P = I²R ≈ 0.055 W</code>, so a 0.25&nbsp;W metal film
-              resistor has plenty of headroom.
+              resistor has margin.
             </li>
             <li>
               <strong>Bias network:</strong> 2&nbsp;×&nbsp;10&nbsp;kΩ forming a
@@ -1330,13 +1326,12 @@
             </li>
             <li>
               The CT/burden voltage is referenced to this mid-rail so the AC
-              waveform rides cleanly between 0&nbsp;V and 3.3&nbsp;V without
-              clipping.
+              waveform stays within the 0&nbsp;V to 3.3&nbsp;V ADC range.
             </li>
             <li>
               <strong>MCU:</strong> ESP32 DevKit-style board (Wi-Fi, onboard
               USB-serial) using one ADC channel for the CT input, with spare
-              GPIOs for future extra clamps / status LEDs.
+              GPIOs for future clamps or status LEDs.
             </li>
             <li>
               <strong>Power:</strong> development via USB 5&nbsp;V; production
@@ -1364,8 +1359,8 @@
               <code>clamps/main_incomer</code> using QoS&nbsp;1.
             </li>
             <li>
-              Implement basic resilience: small local buffer for short outages,
-              reconnect with backoff on Wi-Fi/MQTT failure.
+              Implement basic resilience: small local buffer for short outages
+              and reconnect with backoff on Wi-Fi/MQTT failure.
             </li>
           </ul>
         </div>
@@ -1408,9 +1403,9 @@
               are only reachable inside a mesh of authenticated peers.
             </li>
             <li>
-              The design keeps the default deployment lean, but lets the same
-              node and backend be dropped into more adversarial or
-              compliance-heavy networks without redesigning the architecture.
+              The design keeps the default deployment lean, but allows the same
+              node and backend to be reused in networks with stricter security
+              requirements.
             </li>
           </ul>
         </div>
