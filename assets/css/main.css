@@ -460,6 +460,11 @@ a {
   outline: none;
 }
 
+/* Full-width card inside .grid (span both columns on desktop) */
+.card--full {
+  grid-column: 1 / -1;
+}
+
 /* Make project-link behave nicely as a button trigger */
 .project-link--button {
   border-bottom: none;

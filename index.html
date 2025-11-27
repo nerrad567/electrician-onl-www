@@ -74,7 +74,12 @@
           </p>
         </section>
 
-        <section class="grid" id="profile" aria-label="Profile and strengths">
+        <section
+          class="grid"
+          id="profile"
+          aria-label="Profile, strengths, role fit and projects"
+        >
+          <!-- Profile (col 1) -->
           <article class="card">
             <h2 class="card-title">Profile</h2>
             <p class="card-body">
@@ -113,6 +118,7 @@
             </ul>
           </article>
 
+          <!-- Strengths (col 2) -->
           <article class="card" id="strengths">
             <h2 class="card-title">Strengths</h2>
             <ul class="card-list">
@@ -134,10 +140,34 @@
               </li>
             </ul>
           </article>
-        </section>
 
-        <section class="grid" id="projects" aria-label="Highlight projects">
-          <article class="card card--highlight">
+          <!-- Role fit (full width: spans 2 cols) -->
+          <article class="card card--full" id="fit">
+            <h2 class="card-title">Role fit</h2>
+            <p class="card-body">
+              I’m looking for roles where hands-on infrastructure and real-world
+              constraints matter more than buzzwords.
+            </p>
+            <ul class="card-list">
+              <li>Junior DevOps / Infrastructure Engineer.</li>
+              <li>Platform / SRE-style roles focused on reliability.</li>
+              <li>
+                OT / ICS support roles bridging electrical and infrastructure
+                work.
+              </li>
+            </ul>
+            <p class="card-body">
+              I bring a safety-first mindset from electrical work, plus
+              experience running my own production systems.
+            </p>
+          </article>
+
+          <!-- Highlight projects (full width: spans 2 cols) -->
+          <article
+            class="card card--highlight card--full"
+            id="projects"
+            aria-label="Highlight projects"
+          >
             <h2 class="card-title">Highlight projects</h2>
 
             <div class="project-block">
@@ -287,6 +317,7 @@
                 View detailed tooling profile
               </button>
             </div>
+
             <div class="project-block">
               <h3 class="project-title">Client marketing sites</h3>
               <p class="project-body">
@@ -358,26 +389,6 @@
                 View detailed Phase 0 plan
               </button>
             </div>
-          </article>
-
-          <article class="card" id="fit">
-            <h2 class="card-title">Role fit</h2>
-            <p class="card-body">
-              I’m looking for roles where hands-on infrastructure and real-world
-              constraints matter more than buzzwords.
-            </p>
-            <ul class="card-list">
-              <li>Junior DevOps / Infrastructure Engineer.</li>
-              <li>Platform / SRE-style roles focused on reliability.</li>
-              <li>
-                OT / ICS support roles bridging electrical and infrastructure
-                work.
-              </li>
-            </ul>
-            <p class="card-body">
-              I bring a safety-first mindset from electrical work, plus
-              experience running my own production systems.
-            </p>
           </article>
         </section>
 
