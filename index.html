@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Electrician running real production stacks and moving into DevOps / infrastructure and OT/ICS support roles."
+      content="Time-served electrician running real Linux/Docker infrastructure (Odoo ERP, secure home/remote lab, and automation tooling) and focusing on infrastructure / OT roles."
     />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
@@ -40,11 +40,12 @@
 
       <main class="shell" aria-label="Darren Gray portfolio overview">
         <section class="hero" id="top">
-          <div class="hero-badge">Electrician → DevOps / Infrastructure</div>
+          <div class="hero-badge">Electrician → Infrastructure / OT</div>
           <h1 class="hero-title">Darren&nbsp;Gray</h1>
           <p class="hero-subtitle">
-            Time-served electrician running real production systems &mdash; Odoo
-            ERP, secure home lab, and automation tooling.
+            I’m a time-served electrician who also runs real Linux and Docker
+            infrastructure for my own business: Odoo 18 ERP, a secure home /
+            remote lab, and practical automation tooling.
           </p>
 
           <div class="hero-actions">
@@ -56,7 +57,13 @@
             >
               Open terminal CV
             </a>
-            <a class="btn-ghost" href="#projects"> View highlight projects </a>
+            <button
+              type="button"
+              class="btn-ghost hero-demo-btn"
+              data-overlay-target="#demo-overlay"
+            >
+              Watch demo reel
+            </button>
           </div>
           <p class="hero-sub-links">
             Electrical business:
@@ -71,6 +78,8 @@
             >
               colchester.electrician.onl
             </a>
+            &nbsp;·&nbsp;
+            <a href="#projects">Scroll to highlight projects</a>
           </p>
         </section>
 
@@ -83,21 +92,28 @@
           <article class="card">
             <h2 class="card-title">Profile</h2>
             <p class="card-body">
-              Electrician with hands-on experience operating self-hosted
-              infrastructure and building small web properties in HTML, CSS and
-              JavaScript.
+              I’m an electrician who also designs, deploys, and runs my own
+              infrastructure: Odoo 18, a secure home / remote lab, and
+              automation tooling in PowerShell, Bash, and Python.
             </p>
             <ul class="card-list">
               <li>
                 Domestic, commercial &amp; light industrial electrical works:
-                EICRs, board changes, diagnosis, repairs &amp; compliance.
+                EICRs, board changes, diagnosis, repairs &amp; compliance under
+                BS&nbsp;7671.
               </li>
-
-              <li>Run a production Odoo ERP stack for my own business.</li>
               <li>
-                Built a secure home lab + remote stack with VPN-only access.
+                Run a production Odoo 18 ERP stack in Docker for my electrical
+                business (<code>graylogic.uk</code>).
               </li>
-              <li>Write practical tooling in PowerShell and Bash.</li>
+              <li>
+                Built and operate a secure home lab + remote stack with
+                WireGuard VPN-only access and hardened firewalls.
+              </li>
+              <li>
+                Write practical tooling in PowerShell, Bash, and Python
+                (usb-verifier, ssh-login-helper, secure-media-lab automation).
+              </li>
               <li>
                 Build and maintain static marketing sites such as
                 <a
@@ -124,19 +140,24 @@
             <ul class="card-list">
               <li>
                 <strong>Production systems:</strong> live Odoo instance with
-                real users and data.
+                real customers, jobs, and invoices.
               </li>
               <li>
                 <strong>Reliability:</strong> backups, restores, and rollback
-                paths tested in practice.
+                paths tested in practice, not assumed.
               </li>
               <li>
-                <strong>Security-aware:</strong> WireGuard VPNs, firewalls,
-                minimal exposed services.
+                <strong>Security-aware:</strong> WireGuard VPNs, firewalling,
+                and a “VPN-first, minimal exposure” mindset.
               </li>
               <li>
                 <strong>Communication:</strong> used to explaining technical
-                findings to clients.
+                findings to non-technical clients via EICRs and written reports.
+              </li>
+              <li>
+                <strong>Documentation & honesty:</strong> I write README files,
+                runbooks, and notes as part of the work and I’m clear about
+                what’s stable vs experimental.
               </li>
             </ul>
           </article>
@@ -145,21 +166,25 @@
           <article class="card card--full" id="fit">
             <h2 class="card-title">Role fit</h2>
             <p class="card-body">
-              I’m looking for junior DevOps, infrastructure, or OT/ICS roles
-              working with Linux, Docker, VPNs, and production systems.
+              I’m looking for junior infrastructure, systems, DevOps, or OT/ICS
+              roles working with Linux, Docker, VPNs, and production systems.
             </p>
 
             <ul class="card-list">
-              <li>Junior DevOps / Infrastructure Engineer.</li>
+              <li>Junior Infrastructure / Systems / DevOps Engineer.</li>
               <li>Platform / SRE-style roles focused on reliability.</li>
               <li>
                 OT / ICS support roles bridging electrical and infrastructure
-                work.
+                work (SCADA, secure remote access, field wiring).
+              </li>
+              <li>
+                Network / automation roles where panels, sensors, and servers
+                all need to line up.
               </li>
             </ul>
             <p class="card-body">
-              I bring a safety-first mindset from electrical work, plus
-              experience running my own production systems.
+              I bring a safety-first mindset from electrical work, plus hands-on
+              experience running my own production stacks.
             </p>
           </article>
 
@@ -176,6 +201,8 @@
               <p class="project-body">
                 Secure home lab + remote stack using Debian/WSL2, Docker,
                 WireGuard, and automation scripts for syncing and backups.
+                Designed to behave like “real” infrastructure, not a throwaway
+                lab.
               </p>
               <p class="project-meta">
                 <span>VPN-only access</span>
@@ -202,9 +229,10 @@
             <div class="project-block">
               <h3 class="project-title">graylogic-erp-site</h3>
               <p class="project-body">
-                Production Odoo ERP + website for my electrical business,
+                Production Odoo 18 ERP + website for my electrical business,
                 running in Docker with Traefik, GPG-encrypted backups, and
-                firewall rules.
+                firewall rules. This stack powers both the public site and the
+                day-to-day CRM and job workflow.
               </p>
               <p class="project-meta">
                 <span>Odoo 18</span>
@@ -233,8 +261,8 @@
               <p class="project-body">
                 A ~2,000 line PowerShell script that verifies Windows install
                 USBs against ISO images, including deep WIM/ESD/SWM analysis,
-                signature checks, and structured reporting. Designed to catch
-                tampering and subtle modifications, not just missing files.
+                signature checks, and structured reporting. Built for tampering
+                detection and clear, human-readable summaries.
               </p>
               <p class="project-meta">
                 <span>PowerShell</span>
@@ -244,7 +272,7 @@
               <ul class="project-list">
                 <li>
                   Compares ISO vs USB surface files and flags modified, extra,
-                  and missing items with targeted summaries instead of noisy
+                  and missing items with targeted summaries instead of noisy raw
                   diffs.
                 </li>
                 <li>
@@ -283,8 +311,8 @@
             <div class="project-block">
               <h3 class="project-title">Tooling</h3>
               <p class="project-body">
-                PowerShell and Odoo tooling built to solve specific operational
-                problems:
+                PowerShell, Odoo, and Linux tooling built to remove friction in
+                recurring workflows:
               </p>
               <ul class="project-list">
                 <li>
@@ -294,7 +322,9 @@
                 </li>
                 <li>
                   <strong>odoo-job-request</strong> &mdash; Odoo 18 job request
-                  portal with S3-compatible uploads and structured CRM leads.
+                  portal that creates clean <code>crm.lead</code> records and
+                  attaches uploaded photos / PDFs directly to the lead as Odoo
+                  attachments.
                 </li>
                 <li>
                   <strong>bookish-funicular</strong> &mdash; toolbox repo of
@@ -401,11 +431,14 @@
           <article class="card">
             <h2 class="card-title">Contact &amp; links</h2>
             <p class="card-body">
-              I prefer to share direct contact details with serious
-              opportunities, but you can review my work and technical depth
-              here:
+              Below are the easiest ways to see my work and get in touch:
             </p>
             <ul class="card-list">
+              <li>
+                <strong>Email:</strong>
+                <a href="mailto:darren@graylogic.uk">darren@graylogic.uk</a>
+              </li>
+              <li><strong>Phone:</strong> +44 (0)7749 962 690</li>
               <li>
                 <strong>Terminal CV:</strong>
                 <a
@@ -459,7 +492,13 @@
             </ul>
 
             <p class="card-body">
-              A printable CV (PDF) can be added here as a download when ready.
+              You can also download a printable CV (PDF):
+              <a
+                href="assets/docs/cv_ICT_FULL.pdf"
+                target="_blank"
+                rel="noreferrer"
+                >Download CV</a
+              >.
             </p>
           </article>
         </section>
@@ -515,8 +554,8 @@
           Background &amp; working style
         </h2>
         <p class="overlay-tagline">
-          Electrician running real production stacks and moving into DevOps /
-          infrastructure and OT/ICS support roles.
+          Time-served electrician running real production stacks and focusing on
+          infrastructure / systems and OT/ICS support roles.
         </p>
 
         <div class="overlay-section">
@@ -527,9 +566,8 @@
               finding, compliance with BS 7671 and real-world constraints
               (tenants, downtime, budgets).
             </li>
-
             <li>
-              Built and run a production Odoo ERP stack for my own business,
+              Built and run a production Odoo 18 ERP stack for my own business,
               including web front-end, CRM, invoicing, and backups.
             </li>
             <li>
@@ -562,8 +600,8 @@
           <h3>Roles I’m targeting</h3>
           <ul>
             <li>
-              Junior DevOps / Infrastructure engineer working with Linux,
-              Docker, and CI/CD.
+              Junior infrastructure / systems / DevOps engineer working with
+              Linux, Docker, and CI/CD-style tooling.
             </li>
             <li>
               Platform / SRE-style roles focused on reliability and operability.
@@ -599,7 +637,7 @@
         </h2>
         <p class="overlay-tagline">
           A VPN-first home lab and remote stack built on Debian/WSL2, Docker,
-          and automation, designed to keep media and services under my control.
+          and automation, designed to behave like real infrastructure.
         </p>
 
         <div class="overlay-section">
@@ -1022,7 +1060,7 @@
         <div class="overlay-section">
           <h3>Target roles</h3>
           <ul>
-            <li>Junior DevOps / Infrastructure engineer.</li>
+            <li>Junior infrastructure / systems / DevOps engineer.</li>
             <li>Platform / SRE-style roles focused on reliability.</li>
             <li>
               OT / ICS support roles bridging electrical work and infrastructure
@@ -1090,15 +1128,17 @@
           <h3>Contact channels</h3>
           <ul>
             <li>
+              <strong>Email:</strong>
+              <a href="mailto:darren@graylogic.uk">darren@graylogic.uk</a>
+            </li>
+            <li><strong>Phone:</strong> +44 (0)7749 962 690</li>
+            <li>
               <strong>Terminal CV:</strong> a technical view of my skills at
               <code>terminal.electrician.onl</code>.
             </li>
             <li>
               <strong>GitHub:</strong> primary place to see how I structure
               code, scripts, and documentation.
-            </li>
-            <li>
-              Direct email / phone shared on request for serious opportunities.
             </li>
           </ul>
         </div>
@@ -1107,8 +1147,9 @@
           <h3>What I’m open to</h3>
           <ul>
             <li>
-              Roles where I can grow from “serious hobbyist” to professional in
-              DevOps / infrastructure / OT.
+              Roles where I can grow from “serious hobbyist with production
+              responsibilities” into a professional in DevOps / infrastructure /
+              OT.
             </li>
             <li>
               Practical technical assessments that reflect real work: debugging,
@@ -1210,9 +1251,8 @@
               <code>crm.lead</code> records with clean metadata.
             </li>
             <li>
-              File uploads wired to an S3-compatible backend, keeping the Odoo
-              instance lean while still exposing attachments in the internal
-              lead view.
+              File uploads stored as <code>ir.attachment</code> records, shown
+              inside the internal lead view so everything stays in one place.
             </li>
             <li>
               Field validation and sanitisation to keep unstructured browser
@@ -1280,8 +1320,7 @@
             </li>
             <li>
               <strong>Odoo / Python backend awareness</strong>: ORM models,
-              controllers, templates, and external object storage
-              (S3-compatible) for attachments.
+              controllers, templates, and attachment handling.
             </li>
             <li>
               <strong>Security-minded defaults</strong>: SSH workflows, VPN-only
@@ -1461,6 +1500,72 @@
               requirements.
             </li>
           </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo reel overlay (video) -->
+    <div class="overlay" id="demo-overlay" aria-hidden="true">
+      <div class="overlay-backdrop" data-overlay-close></div>
+      <div
+        class="overlay-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="demo-overlay-title"
+      >
+        <button
+          type="button"
+          class="overlay-close"
+          aria-label="Close demo reel"
+          data-overlay-close
+        >
+          ×
+        </button>
+
+        <h2 class="overlay-title" id="demo-overlay-title">Demo reel</h2>
+        <p class="overlay-tagline">
+          A short ambient reel to give a feel for the kind of tools and stacks I
+          actually work with: terminals, dashboards, and web UIs.
+        </p>
+
+        <div class="overlay-video-wrapper">
+          <video class="overlay-video" autoplay muted loop playsinline controls>
+            <source
+              src="assets/media/Dark-mode_terminal_interface_booting_up_smooth_camera_move_into_abstract_server_racks_with_blinking_seed4085283224.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="overlay-section">
+          <h3>What this will eventually show</h3>
+          <p>
+            The plan is to replace this generic terminal/server loop with a
+            stitched reel of real systems I’ve built and run:
+          </p>
+          <ul>
+            <li>
+              <strong>secure-media-lab</strong> — home/remote lab and VPN-only
+              stack.
+            </li>
+            <li>
+              <strong>graylogic-erp-site</strong> — live Odoo 18 ERP and website
+              for Gray Logic Electrical.
+            </li>
+            <li>
+              <strong>usb-verifier</strong> — Windows install media integrity
+              scanner in PowerShell.
+            </li>
+            <li>
+              <strong>ssh-login-helper</strong> — interactive SSH launcher for
+              multi-host workflows.
+            </li>
+          </ul>
+          <p>
+            Until I cut that reel, this placeholder video simply sets the tone:
+            dark terminal, infra-focused, and no fluff.
+          </p>
         </div>
       </div>
     </div>
