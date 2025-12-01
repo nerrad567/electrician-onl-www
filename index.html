@@ -1571,47 +1571,45 @@
 
         <h2 class="overlay-title" id="demo-overlay-title">Demo reel</h2>
         <p class="overlay-tagline">
-          A short ambient reel to give a feel for the kind of tools and stacks I
-          actually work with: terminals, dashboards, and web UIs.
+          A short ambient reel of systems I’ve designed, built, and run:
+          terminals, dashboards, and production web UIs.
         </p>
 
         <div class="overlay-video-wrapper">
-          <video class="overlay-video" autoplay muted loop playsinline controls>
-            <source
-              src="assets/media/Dark-mode_terminal_interface_booting_up_smooth_camera_move_into_abstract_server_racks_with_blinking_seed4085283224.mp4"
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
+          <iframe
+            class="overlay-video"
+            src="https://player.vimeo.com/video/1142031262?background=1&autoplay=1&loop=1&muted=1"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            title="Demo reel – real infrastructure projects"
+          ></iframe>
         </div>
 
         <div class="overlay-section">
-          <h3>What this will eventually show</h3>
-          <p>
-            The plan is to replace this generic terminal/server loop with a
-            stitched reel of real systems I’ve built and run:
-          </p>
+          <h3>What you’re looking at</h3>
+          <p>Clips from systems I personally built, deployed, and maintain:</p>
           <ul>
             <li>
-              <strong>secure-media-lab</strong> — home/remote lab and VPN-only
-              stack.
+              <strong>secure-media-lab</strong> – VPN-only home/remote lab with
+              Dockerised media stack and encrypted off-site backups.
             </li>
             <li>
-              <strong>graylogic-erp-site</strong> — live Odoo 18 ERP and website
-              for Gray Logic Electrical.
+              <strong>graylogic-erp-site</strong> – live Odoo 18 ERP + website
+              for Gray Logic Electrical, on a self-managed Debian VPS.
             </li>
             <li>
-              <strong>usb-verifier</strong> — Windows install media integrity
-              scanner in PowerShell.
+              <strong>usb-verifier</strong> – PowerShell tool for deep integrity
+              checks on Windows install media (ISO vs USB).
             </li>
             <li>
-              <strong>ssh-login-helper</strong> — interactive SSH launcher for
-              multi-host workflows.
+              <strong>ssh-login-helper</strong> – interactive SSH launcher that
+              parses OpenSSH config and metadata for multi-host workflows.
             </li>
           </ul>
           <p>
-            Until I cut that reel, this placeholder video simply sets the tone:
-            dark terminal, infra-focused, and no fluff.
+            Everything shown here is real infrastructure I run day-to-day, not
+            mockups.
           </p>
         </div>
       </div>
