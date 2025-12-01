@@ -78,12 +78,33 @@
     overlay.classList.add("overlay--open");
     overlay.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
+
+    // Start Vimeo playback if present
+    setOverlayVideoState(overlay, "play");
   }
 
   function closeOverlay(overlay) {
+    // Pause Vimeo playback if present
+    setOverlayVideoState(overlay, "pause");
+
     overlay.classList.remove("overlay--open");
     overlay.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+  }
+
+  function setOverlayVideoState(overlay, action) {
+    // action: "play" or "pause"
+    const iframe = overlay.querySelector(".overlay-video");
+    if (!iframe || !iframe.contentWindow) return;
+
+    try {
+      iframe.contentWindow.postMessage(
+        JSON.stringify({ method: action }),
+        "https://player.vimeo.com"
+      );
+    } catch (e) {
+      // ignore if player not ready yet
+    }
   }
 
   overlayTriggers.forEach((trigger) => {
